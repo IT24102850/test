@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const itemSchema = new mongoose.Schema({
+  serial: { type: String, required: true, unique: true },
   name: { type: String, required: true },
   description: { type: String },
   quantity: { type: Number, default: 0 },

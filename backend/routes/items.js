@@ -15,8 +15,8 @@ router.get('/', async (req, res) => {
 
 // Add new item
 router.post('/', async (req, res) => {
-  const { name, quantity } = req.body;
-  const item = new Item({ name, quantity });
+  const { serial, name, description, quantity } = req.body;
+  const item = new Item({ serial, name, description, quantity });
   try {
     const newItem = await item.save();
     res.status(201).json(newItem);
